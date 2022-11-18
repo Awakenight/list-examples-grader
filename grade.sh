@@ -8,9 +8,10 @@ file="ListExamples.java"
 
 rm -rf student-submission
 git clone $1 student-submission
+cp TestListExamples.java student-submission/
 cd student-submission
 
-if [[ -f $file ]] && [[ -e $file ]]
+if [[ -f $file ]]
 then
     echo "File found!"
 else
@@ -18,7 +19,6 @@ else
     exit 1
 fi
 
-cp TestListExamples.java student-submission/
 javac -cp $CPATH *.java
 
 if [[ $? -eq 0 ]]
@@ -45,4 +45,4 @@ then
     echo "[FAILED 0/1] testMerge"
 fi
 
-echo Total Grade: $totalPoints/2
+echo Total Grade: $TotalGrade/2
